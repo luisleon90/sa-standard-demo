@@ -10,5 +10,5 @@ with agg_returned_orders_by_month as ( select * from {{ ref('agg_returned_orders
 select *
 from agg_returned_orders_by_month
 where order_month = (select max(order_month) from agg_returned_orders_by_month)
-and return_rate > 0.50 
+and return_rate > 0.60 
 
