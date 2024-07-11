@@ -51,3 +51,4 @@ renamed as (
 )
 
 select * from renamed
+where status_code = 'shipped'
