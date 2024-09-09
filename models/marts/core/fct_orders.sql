@@ -7,7 +7,7 @@
 
 with orders as (
     
-    select * from analytics.dbt_lleon.stg_tpch_orders
+    select * from {{ ref('stg_tpch_orders') }}
 
 ),
 order_item as (
