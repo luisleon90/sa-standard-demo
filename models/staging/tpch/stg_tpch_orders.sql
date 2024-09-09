@@ -1,10 +1,6 @@
+with source as (
 
-  create or replace   view analytics.dbt_lleon.stg_tpch_orders
-  
-   as (
-    with source as (
-
-    select * from raw.tpch_now.orders
+    select * from {{ source('tpch_now', 'orders') }}
 
 ),
 
@@ -27,5 +23,3 @@ rename as (
 )
 
 select * from rename
-  );
-
