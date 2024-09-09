@@ -23,7 +23,7 @@ order_item_summary as (
         sum(item_discount_amount) as item_discount_amount,
         sum(item_tax_amount) as item_tax_amount,
         sum(net_item_sales_amount) as net_item_sales_amount,
-        count_if( is_return = true ) as return_count
+        --count_if( is_return = true ) as return_count
     from order_item
     group by
         1
@@ -40,7 +40,7 @@ final as (
         orders.clerk_name,
         orders.ship_priority,     
         1 as order_count,
-        order_item_summary.return_count,             
+        --order_item_summary.return_count,             
         order_item_summary.gross_item_sales_amount,
         order_item_summary.item_discount_amount,
         order_item_summary.item_tax_amount,
