@@ -151,37 +151,7 @@ sources:
     description: Welcome to the dbt Labs demo dbt project! We use the [TPCH dataset](https://docs.snowflake.com/en/user-guide/sample-data-tpch.html) to create a sample project to emulate what a production project might look like!
     database: raw
     schema: tpch_now
-    tables:
-      - name: orders
-        description: main order tracking table
-        
-        columns:
-          - name: o_orderkey
-            description: SF*1,500,000 are sparsely populated
-            tests: 
-              - unique
-              - not_null
-                  
-          - name: o_custkey
-            description: Foreign Key to C_CUSTKEY
-            tests:
-              - relationships:
-                  to: source('tpch', 'customer')
-                  field: c_custkey
-          - name: o_orderstatus
-            description: status code of the order
-          - name: o_totalprice
-            description: raw price
-          - name: o_orderdate
-            description: date the order was made
-          - name: o_orderpriority
-            description: code associated with the order
-          - name: o_clerk
-            description: id of the clerk
-          - name: o_shippriority
-            description: numeric representation of the shipping priority, zero being the default
-          - name: o_comment
-            description: '{{ doc("comment") }}'
+    tables:      
       - name: lineitem
         schema: tpch_now
         description: main lineitem table
