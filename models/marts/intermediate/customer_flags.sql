@@ -12,7 +12,7 @@ with customer as (
 
     orders as (
 
-    select * from {{ ref('stg_tpch_orders') }}
+    select * from analytics.dbt_lleon.stg_tpch_orders
 
 ),
     
