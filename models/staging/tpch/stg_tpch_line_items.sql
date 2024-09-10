@@ -24,7 +24,7 @@ renamed as (
         case 
             when l_returnflag in ('R') then 'returned'
             when l_returnflag in ('A') then 'accepted'
-            else 'unknown'
+            else 'new'
         end as return_flag, 
 
         case 
@@ -51,3 +51,4 @@ renamed as (
 )
 
 select * from renamed
+where status_code = 'shipped'
